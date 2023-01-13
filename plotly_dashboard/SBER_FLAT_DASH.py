@@ -15,12 +15,12 @@ import pickle
 import catboost as cb
 
 
-df_train = pd.read_csv(Path(Path.cwd(), 'data', 'train.csv'), parse_dates=['timestamp'])
+df_train = pd.read_csv(Path(Path.cwd(), 'plotly_dashboard/data', 'train.csv'), parse_dates=['timestamp'])
 
 
 ## Импорт файла geojson
 def load_geojson():
-    data_path_geojson = Path(Path.cwd(), 'data', 'mo.geojson')
+    data_path_geojson = Path(Path.cwd(), 'plotly_dashboard/data', 'mo.geojson')
     with open(data_path_geojson) as f:
         data_geojson = json.load(f)
     
@@ -29,7 +29,7 @@ def load_geojson():
 ## импорт модели
 def load_model():
     ## Find the path
-    data_path = Path(Path.cwd(), 'model', 'model_cb_dash.pkl')
+    data_path = Path(Path.cwd(), 'plotly_dashboard/model', 'model_cb_dash.pkl')
 
     ## Load model
     with open(data_path, "rb") as f:
@@ -38,7 +38,7 @@ def load_model():
     return model
 
 ## Словарь для районов (латиница-кириллица)
-df_area_dict = pd.read_csv(Path(Path.cwd(), 'data', 'merge_area.csv'), sep = ';')
+df_area_dict = pd.read_csv(Path(Path.cwd(), 'plotly_dashboard/data', 'merge_area.csv'), sep = ';')
 
 ## Создаем список для передачи в карту
 list_propert = list(set([x['properties']['NAME'] for x in load_geojson()['features']]))
