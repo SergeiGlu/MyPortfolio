@@ -3,7 +3,6 @@
 
 from dash import Dash, html, dcc, Output, Input, State
 import dash_bootstrap_components as dbc
-import dash_daq as daq
 
 from pathlib import Path
 import pandas as pd
@@ -15,7 +14,12 @@ import pickle
 import catboost as cb
 
 
+<<<<<<< HEAD
 df_train = pd.read_csv(Path(Path.cwd(), 'plotly_dashboard/data', 'train.csv'), parse_dates=['timestamp'])
+=======
+
+df_train = pd.read_csv(Path(Path.cwd(), 'data', 'train.csv'), parse_dates=['timestamp'])
+>>>>>>> f8fd6b3b33120f075f5b71aac91d1eb3f66266d1
 
 
 ## Импорт файла geojson
