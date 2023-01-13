@@ -14,12 +14,7 @@ import pickle
 import catboost as cb
 
 
-<<<<<<< HEAD
 df_train = pd.read_csv(Path(Path.cwd(), 'plotly_dashboard/data', 'train.csv'), parse_dates=['timestamp'])
-=======
-
-df_train = pd.read_csv(Path(Path.cwd(), 'data', 'train.csv'), parse_dates=['timestamp'])
->>>>>>> f8fd6b3b33120f075f5b71aac91d1eb3f66266d1
 
 
 ## Импорт файла geojson
