@@ -332,6 +332,8 @@ def get_value_model(n_clicks, map_region, prodtype, month_output,
         ## Обработка входящего массива
         col_categ = [6, 16]
         df_data_cat = cb.Pool(df_data, cat_features=col_categ)
+
+        print(df_data)
         
         pred = np.exp(model.predict(df_data_cat))
 
